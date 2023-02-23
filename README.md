@@ -1,24 +1,24 @@
-# README
+# My Singularity 6 Interview
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### POST call
+Type into terminal:
+```
+ curl localhost:4000 -XPOST -d '{ "url": "http://www.singularity6.com" }'
+```
 
-Things you may want to cover:
+Expected Response
+```
+{ "short_url_code": "/abc123", "url": "http://www.singularity6.com" }
+```
 
-* Ruby version
+GET call
+Type into terminal
+```
+curl localhost:4000/abc123
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Expected Response
+```
+Location:http://www.singularity6.com
+```
+In Postman, the response returns a 301 Moved Permanently status
